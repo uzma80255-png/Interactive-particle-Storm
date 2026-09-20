@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Particle Storm</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- MediaPipe Hands -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js"></script>
+</head>
+
+<body>
+
+    <video id="webcam" autoplay muted playsinline></video>
+
+    <canvas id="scene"></canvas>
+
+    <!-- Loading Screen -->
+    <div id="loading">
+        <div class="loader"></div>
+        <div id="loadingText">
+            INITIALISING PARTICLE STORM...
+        </div>
+    </div>
+
+
+    <!-- HUD -->
+    <div class="hud">
+
+        <div class="brand">
+            <div>PARTICLE</div>
+            <strong>STORM</strong>
+        </div>
+
+
+        <div class="connection">
+            <span id="statusDot"></span>
+            <span id="statusText">
+                STARTING CAMERA
+            </span>
+        </div>
+
+
+        <div class="stats">
+
+            <div>
+                <small>PARTICLES</small>
+                <b>3000</b>
+            </div>
+
+            <div>
+                <small>FPS</small>
+                <b id="fps">--</b>
+            </div>
+
+            <div>
+                <small>HANDS</small>
+                <b id="handCount">0</b>
+            </div>
+
+            <div>
+                <small>FINGERS</small>
+                <b id="fingerCount">--</b>
+            </div>
+
+        </div>
+
+
+        <div class="help">
+
+            <div>
+                MOVE HAND — CONTROL SPHERE
+            </div>
+
+            <div>
+                PINCH — CHARGE / RELEASE EXPLOSION
+            </div>
+
+            <div>
+                TWO HANDS — CHANGE SIZE
+            </div>
+
+            <div>
+                FINGERS — CHANGE PARTICLE COLOUR
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Charge Bar -->
+
+    <div id="charge">
+
+        <div>CHARGE</div>
+
+        <div class="chargeTrack">
+            <div id="chargeFill"></div>
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

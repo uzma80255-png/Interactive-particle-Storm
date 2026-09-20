@@ -1,0 +1,344 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    position: relative;
+}
+
+
+/* THREE.JS CANVAS */
+
+#scene {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+
+/* WEBCAM */
+
+#webcam {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    width: 180px;
+    height: 135px;
+
+    object-fit: cover;
+
+    transform: scaleX(-1);
+
+    opacity: 0.18;
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    border-radius: 10px;
+
+    z-index: 5;
+}
+
+
+/* HUD */
+
+.hud {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 10;
+
+    pointer-events: none;
+
+    color: white;
+}
+
+
+/* TITLE */
+
+.brand {
+    position: absolute;
+
+    top: 32px;
+    left: 38px;
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+    opacity: 0.72;
+}
+
+
+.brand strong {
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: 27px;
+
+    letter-spacing: 7px;
+
+    opacity: 1;
+}
+
+
+/* CONNECTION STATUS */
+
+.connection {
+    position: absolute;
+
+    top: 40px;
+    right: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.7;
+}
+
+
+#statusDot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    box-shadow: 0 0 10px white;
+}
+
+
+/* STATS */
+
+.stats {
+    position: absolute;
+
+    left: 38px;
+    bottom: 35px;
+
+    display: flex;
+
+    gap: 26px;
+}
+
+
+.stats div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.stats small {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.4;
+}
+
+
+.stats b {
+    font-size: 14px;
+
+    font-weight: 400;
+
+    letter-spacing: 1px;
+}
+
+
+/* INSTRUCTIONS */
+
+.help {
+    position: absolute;
+
+    right: 38px;
+    bottom: 35px;
+
+    text-align: right;
+
+    font-size: 8px;
+
+    line-height: 2;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.35;
+}
+
+
+/* CHARGE BAR */
+
+#charge {
+    position: fixed;
+
+    z-index: 20;
+
+    left: 50%;
+    bottom: 30px;
+
+    width: 190px;
+
+    transform: translateX(-50%);
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 8px;
+
+    letter-spacing: 3px;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+.chargeTrack {
+    width: 100%;
+
+    height: 2px;
+
+    margin-top: 7px;
+
+    background: rgba(255,255,255,0.15);
+}
+
+
+#chargeFill {
+    width: 0%;
+
+    height: 100%;
+
+    background: white;
+
+    box-shadow: 0 0 10px white;
+}
+
+
+/* LOADING SCREEN */
+
+#loading {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 100;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    background: #000;
+
+    color: white;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    transition: opacity 0.5s ease;
+}
+
+
+.loader {
+    width: 28px;
+    height: 28px;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    border-top-color: white;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .brand {
+        left: 18px;
+        top: 18px;
+    }
+
+
+    .connection {
+        right: 18px;
+        top: 24px;
+    }
+
+
+    .stats {
+        left: 18px;
+        bottom: 18px;
+
+        gap: 14px;
+    }
+
+
+    .help {
+        right: 18px;
+        bottom: 18px;
+
+        font-size: 6px;
+    }
+
+
+    #webcam {
+        width: 120px;
+        height: 90px;
+
+        right: 12px;
+        bottom: 90px;
+    }
+
+}
